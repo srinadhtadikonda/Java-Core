@@ -9,8 +9,8 @@ class Main
 {
 public static void main(String args[])
 {
-TFour T1=new TFour();
-TFour T2=new TFour();
+TThree T1=new TThree();
+TThree T2=new TThree();
 T1.start();
 T2.start();
 }
