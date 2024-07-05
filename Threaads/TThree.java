@@ -1,5 +1,5 @@
 import java.lang.*;
-class TFour extends Thread
+class TThree extends Thread
 {
 public void run()
 {
