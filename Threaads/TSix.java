@@ -1,4 +1,7 @@
-class TestThreadOne
+package corejavaprograms;
+
+import java.lang.*;
+class TestThreadOne extends Thread
 {
 int x;
 TestThreadOne(int x)
@@ -26,6 +29,6 @@ class Main
 public static void main(String args[])
 {
 TestThreadOne TTO=new TestThreadOne(1);
-TTO.run();
+TTO.start();
 }
 }
