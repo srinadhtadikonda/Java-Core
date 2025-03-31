@@ -3,11 +3,6 @@ package corejavaprograms;
 import java.lang.*;
 class TestThreadOne extends Thread
 {
-int x;
-TestThreadOne(int x)
-{
-this.x=x;
-}
 public void run()
 {
 try
@@ -28,7 +23,7 @@ class Main
 {
 public static void main(String args[])
 {
-TestThreadOne TTO=new TestThreadOne(1);
+TestThreadOne TTO=new TestThreadOne();
 TTO.start();
 }
 }
