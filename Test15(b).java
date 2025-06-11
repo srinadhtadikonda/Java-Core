@@ -1,13 +1,14 @@
+package corejavaprograms;
 import java.lang.*;
 import java.io.*;
-class Test
+class Test04
 {
-public static void main(String args[])
+public static void main(String args[]) throws IOException
 {
-BufferedReader br=new BufferedReader(new InputStreamReader(System.in);
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 int sno,sclass,m1,m2,m3,m4,m5,m6,tot;
 String sname;
-char ssec;
+String ssec;
 double avg;
 System.out.print("Enter Sno..:");
 sno=Integer.parseInt(br.readLine());
@@ -16,7 +17,7 @@ sname=br.readLine();
 System.out.print("Enter Sclass..:");
 sclass=Integer.parseInt(br.readLine());
 System.out.print("Enter Ssec..:");
-ssec=Integer.parseInt(br.readLine());
+ssec=br.readLine();
 System.out.print("Enter M1..:");
 m1=Integer.parseInt(br.readLine());
 System.out.print("Enter M2..:");
