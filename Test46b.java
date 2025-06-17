@@ -1,4 +1,8 @@
-#jagged Array
+//jagged Array
+
+package corejavaprograms;
+
+import java.lang.*;
 
 class Test
 {
