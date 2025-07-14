@@ -10,7 +10,7 @@ class InvalidAgeException extends Exception
 }
 class Test 
 {
-static void ageCheck(int age) throws InvalidAgeException
+void ageCheck(int age) throws InvalidAgeException
 {
 	if(age<18)
 {
@@ -21,17 +21,18 @@ else
 	System.out.println("You Are  Eligible To Vote");
 }
 }
+}
 class CheckAge
 {
 public static void main(String args[])
 {
+Test T=new Test();
 	try
 	{
-		ageCheck(5);
+		T.ageCheck(5);
 	}catch(InvalidAgeException ie)
 	{
 		System.out.println(ie);
 	}
 	}
 }
-
