@@ -22,7 +22,7 @@ System.out.print("Enter Epf..:");
 epf=Float.parseFloat(br.readLine());
 
 
-System.out.print("Enter Epf..:");
+System.out.print("Enter Egrade..:");
 egrade=(char)br.read();
 
 System.out.println("-------------------------------------");
