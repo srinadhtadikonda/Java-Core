@@ -1,38 +1,42 @@
-package corejavaprograms;
-
-class InvalidAgeException extends Exception
+package myjava;
+@SuppressWarnings("serial")
+class MyException extends Exception
 {
+
+	public MyException()
+	{
+		super("invalid Age");
+	}
+	@Override
 	public String toString()
 	{
-		return "You Are Not Eligible To Vote";
 		
+		return getMessage();
 	}
 }
-class Test 
+public class Test
 {
-void ageCheck(int age) throws InvalidAgeException
-{
-	if(age<18)
-{
-		throw new InvalidAgeException();
-}
-else
-{
-	System.out.println("You Are  Eligible To Vote");
-}
-}
-}
-class CheckAge
-{
-public static void main(String args[])
-{
-Test T=new Test();
-	try
+	public void checkdAge(int x) throws MyException
 	{
-		T.ageCheck(5);
-	}catch(InvalidAgeException ie)
-	{
-		System.out.println(ie);
+		if(x<18)
+		{
+		throw  new MyException();
+		}
+		else
+		{
+			System.out.println("Eligible To Vote");
+			
+		}
 	}
+		public static void main(String args[])
+		{
+			Test T=new Test();
+			try 
+			{
+			T.checkdAge(38);
+		}catch(MyException me)
+			{
+			me.printStackTrace();
+			}
 	}
 }
