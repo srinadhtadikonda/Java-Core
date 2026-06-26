@@ -2,22 +2,17 @@ import java.util.*;
 
 class Main {
     public static void main(String args[]) {
-        Scanner SC = new Scanner(System.in);
-        String x;
+        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter String..: ");
-        x = SC.nextLine();
+        System.out.print("Enter String: ");
+        String x = sc.nextLine();
+
+        char[] arr = x.toCharArray();  // convert to array
 
         int len = 0;
 
-        // finding length using loop
-        try {
-            for (;;) {
-                x.charAt(len);
-                len++;
-            }
-        } catch (Exception e) {
-            // loop stops when index goes out of range
+        for (char c : arr) {
+            len++;
         }
 
         System.out.println("String = " + x);
