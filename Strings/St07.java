@@ -1,15 +1,31 @@
-public class LowerToUpper {
-    public static void main(String[] args) {
-        String str = "hello world";
+import java.util.*;
 
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
+class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
 
-            if (ch >= 'a' && ch <= 'z') {
-                ch = (char)(ch - 32);
+        System.out.print("Enter String: ");
+        String str = sc.nextLine();
+
+        char[] arr = str.toCharArray();
+
+        int i = 0;
+        int j = arr.length - 1;
+
+        boolean isPalindrome = true;
+
+        while (i < j) {
+            if (arr[i] != arr[j]) {
+                isPalindrome = false;
+                break;
             }
-
-            System.out.print(ch);
+            i++;
+            j--;
         }
+
+        if (isPalindrome)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
     }
 }
