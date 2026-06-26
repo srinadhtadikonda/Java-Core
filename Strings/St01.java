@@ -1,9 +1,13 @@
-public class PrintStringArray {
-    public static void main(String[] args) {
-        char[] arr = {'H', 'e', 'l', 'l', 'o'};
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]);
-        }
-    }
+import java.util.*;
+class Main 
+{
+ public static void main(String args[])
+ {
+     Scanner SC=new Scanner(System.in);
+     String x;
+     System.out.print("Enter String..:");
+     x=SC.nextLine();
+     System.out.print("String="+x);
+     
+ }
 }
