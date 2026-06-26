@@ -1,27 +1,24 @@
-public class Palindrome {
-    public static void main(String[] args) {
-        String str = "madam";
+import java.util.*;
 
-        int len = 0;
-        try {
-            while (true) {
-                str.charAt(len);
-                len++;
+class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter String: ");
+        String str = sc.nextLine();
+
+        char[] arr = str.toCharArray();
+
+        System.out.print("Uppercase String: ");
+
+        for (int i = 0; i < arr.length; i++) {
+            char ch = arr[i];
+
+            if (ch >= 'a' && ch <= 'z') {
+                ch = (char)(ch - 32);
             }
-        } catch (Exception e) {}
 
-        boolean flag = true;
-
-        for (int i = 0; i < len / 2; i++) {
-            if (str.charAt(i) != str.charAt(len - 1 - i)) {
-                flag = false;
-                break;
-            }
+            System.out.print(ch);
         }
-
-        if (flag)
-            System.out.println("Palindrome");
-        else
-            System.out.println("Not Palindrome");
     }
 }
