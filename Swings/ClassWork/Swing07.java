@@ -1,6 +1,6 @@
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 
 public class StudentResult extends JFrame implements ActionListener {
 
@@ -11,9 +11,8 @@ public class StudentResult extends JFrame implements ActionListener {
     public StudentResult() {
 
         setTitle("Student Result System");
-        setSize(400, 600);
-        setLayout(new GridLayout(15, 2, 5, 5));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
 
         String labels[] = {
                 "SNO", "SNAME", "SCLASS", "SSEC",
@@ -21,18 +20,35 @@ public class StudentResult extends JFrame implements ActionListener {
                 "Total", "Average", "Grade", "Pass/Fail"
         };
 
-        for (int i = 0; i < 14; i++) {
-            lbl[i] = new JLabel(labels[i]);
-            txt[i] = new JTextField();
+        // Form Panel
+        JPanel formPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
 
-            // Make output fields read-only
+        gbc.insets = new Insets(5, 10, 5, 10);
+        gbc.anchor = GridBagConstraints.WEST;
+
+        for (int i = 0; i < 14; i++) {
+
+            lbl[i] = new JLabel(labels[i] + " :");
+            txt[i] = new JTextField(15);
+
             if (i >= 10) {
                 txt[i].setEditable(false);
             }
 
-            add(lbl[i]);
-            add(txt[i]);
+            // Label
+            gbc.gridx = 0;
+            gbc.gridy = i;
+            gbc.fill = GridBagConstraints.NONE;
+            formPanel.add(lbl[i], gbc);
+
+            // TextField
+            gbc.gridx = 1;
+            formPanel.add(txt[i], gbc);
         }
+
+        // Button Panel
+        JPanel buttonPanel = new JPanel();
 
         resultBtn = new JButton("RESULT");
         clearBtn = new JButton("CLEAR");
@@ -42,10 +58,16 @@ public class StudentResult extends JFrame implements ActionListener {
         clearBtn.addActionListener(this);
         quitBtn.addActionListener(this);
 
-        add(resultBtn);
-        add(clearBtn);
-        add(quitBtn);
+        buttonPanel.add(resultBtn);
+        buttonPanel.add(clearBtn);
+        buttonPanel.add(quitBtn);
 
+        add(formPanel, BorderLayout.CENTER);
+        add(buttonPanel, BorderLayout.SOUTH);
+
+        pack();
+        setResizable(false); 
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
