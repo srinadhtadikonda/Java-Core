@@ -1,8 +1,8 @@
-```java
 import javax.swing.*;
 import java.awt.event.*;
 
-public class TextFieldExample implements ActionListener {
+public class TextFieldExample implements ActionListener 
+{
 
     JLabel l1, l2, l3;
     JTextField tf1, tf2, tf3;
